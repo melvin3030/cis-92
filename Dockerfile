@@ -7,5 +7,6 @@ COPY app/ /app
 
 WORKDIR /app/mysite
 
+EXPOSE 8000
 ENTRYPOINT ["bash"]
 CMD ["-c", "./entrypoint.sh"]
