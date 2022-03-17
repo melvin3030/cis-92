@@ -17,6 +17,14 @@ ENV DJANGO_ADMIN_EMAIL=django@django.com
 ENV DJANGO_ADMIN_USERNAME=django
 ENV DJANGO_SUPERUSER_PASSWORD=django
 
+# Uncomment the lines below and set variables if POSTGRES is used
+#ENV DB_ENGINE=postgres
+#ENV DB_NAME=mysite
+#ENV DB_USER=postgres
+#ENV DB_PASSWORD=django
+#ENV DB_HOST=postgres
+
+
 EXPOSE 8000
 ENTRYPOINT ["bash"]
 CMD ["-c", "./entrypoint.sh"]
