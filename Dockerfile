@@ -17,12 +17,12 @@ ENV DJANGO_ADMIN_EMAIL=django@django.com
 ENV DJANGO_ADMIN_USERNAME=django
 ENV DJANGO_SUPERUSER_PASSWORD=django
 
-# Uncomment the lines below and set variables if POSTGRES is used
-#ENV DB_ENGINE=postgres
-#ENV DB_NAME=mysite
-#ENV DB_USER=postgres
-#ENV DB_PASSWORD=django
-#ENV DB_HOST=postgres
+ENV DB_ENGINE=sqlite
+# If sqlite will not be used, change DB_ENGINE variable to prefered db application name. Then uncomment lines below, and set db variables  
+#ENV DB_NAME=
+#ENV DB_USER=
+#ENV DB_PASSWORD=
+#ENV DB_HOST=
 
 
 EXPOSE 8000
