@@ -1,0 +1,38 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: mysite
+  labels:
+    app: mysite
+spec:
+  volumes:
+  - name: db
+    persistentVolumeClaim:
+        claimName: db
+  containers:
+  - name: mysite
+    image: ghcr.io/melvin3030/cis-92:main
+    imagePullPolicy: Always
+    volumeMounts:
+    - name: db
+      mountPath: /db    
+    resources:
+      limits:
+        cpu: 256m 
+        memory: 512Mi
+        ephemeral-storage: 10Mi
+    livenessProbe:
+      httpGet:
+        path: /polls/
+        port: 8000
+    ports:
+    - containerPort: 8000
+    env:
+    - name: DB_ENGINE
+      value: "sqlite"
+    - name: DJANGO_ADMIN_EMAIL
+      value: "test@test.test"
+    - name: DJANGO_ADMIN_USERNAME
+      value: "test"
+    - name: DJANGO_SUPERUSER_PASSWORD
+      value: "test"
