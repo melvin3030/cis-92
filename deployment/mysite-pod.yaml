@@ -35,7 +35,8 @@ spec:
     - name: DB_USER
       value: mysiteuser
     - name: DB_HOST
-      value: postgres
+      value: helm-postgres-postgresql
+    #  value: postgres
     - name: DB_PASSWORD
       value: mysitepassword
     - name: DJANGO_ADMIN_EMAIL
