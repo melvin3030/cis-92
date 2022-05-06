@@ -1,0 +1,28 @@
+provider: "google"
+
+policy: "sync"
+
+serviceAccount:
+  create: true
+  name: external-dns
+  annotations:
+    iam.gke.io/gcp-service-account: sa-edns@cis-92-339604.iam.gserviceaccount.com
+
+sources:
+  - service
+  - ingress
+
+domainFilters:
+  - www.mcran.one
+
+txtOwnerId: "kubernetes-app"
+
+resources:
+  requests:
+    memory: "512Mi"
+    cpu: "250m"
+    ephemeral-storage: "10Mi"
+  limits:
+    memory: "512Mi"
+    cpu: "250m"
+    ephemeral-storage: "10Mi"
