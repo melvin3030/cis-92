@@ -1,0 +1,17 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: cis-92-ingress
+  annotations: {}
+spec:
+  rules:
+  - host: "www.mcran.one"
+    http:
+      paths:
+      - path: /
+        pathType: Prefix
+        backend:
+          service: 
+            name: mysite
+            port:
+              number: 8000
