@@ -13,7 +13,7 @@ sources:
   - ingress
 
 domainFilters:
-  - www.mcran.one
+  - mcran.one
 
 txtOwnerId: "kubernetes-app"
 
