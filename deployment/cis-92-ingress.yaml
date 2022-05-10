@@ -2,8 +2,14 @@ apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
   name: cis-92-ingress
-  annotations: {}
+  annotations: 
+    nginx.ingress.kubernetes.io/rewrite-target: /
+    cert-manager.io/cluster-issuer: letsencrypt
 spec:
+  tls:
+  - hosts: 
+    - www.mcran.one
+    secretName: apps-cert-secret
   rules:
   - host: "www.mcran.one"
     http:

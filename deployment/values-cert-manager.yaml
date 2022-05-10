@@ -1,0 +1,57 @@
+installCRDs: true
+
+prometheus:
+  enabled: false 
+
+serviceAccount:
+  create: true
+  name: cert-manager
+  annotations:     
+    iam.gke.io/gcp-service-account: sa-edns@cis-92-339604.iam.gserviceaccount.com
+
+global:
+  leaderElection:
+    namespace: cert-manager
+
+resources:
+  requests:
+    memory: "512Mi"
+    cpu: "250m"
+    ephemeral-storage: "10Mi"
+  limits:
+    memory: "512Mi"
+    cpu: "250m"
+    ephemeral-storage: "10Mi"
+
+webhook:
+  resources:
+    requests:
+      memory: "512Mi"
+      cpu: "250m"
+      ephemeral-storage: "10Mi"
+    limits:
+      memory: "512Mi"
+      cpu: "250m"
+      ephemeral-storage: "10Mi"
+
+cainjector:
+  resources:
+    requests:
+      memory: "512Mi"
+      cpu: "250m"
+      ephemeral-storage: "10Mi"
+    limits:
+      memory: "512Mi"
+      cpu: "250m"
+      ephemeral-storage: "10Mi"
+
+startupapicheck:
+  resources:
+    requests:
+      memory: "512Mi"
+      cpu: "250m"
+      ephemeral-storage: "10Mi"
+    limits:
+      memory: "512Mi"
+      cpu: "250m"
+      ephemeral-storage: "10Mi"
